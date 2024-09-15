@@ -1,0 +1,37 @@
+import math
+import sys
+sys.setrecursionlimit(1000000)
+def choose(n,k):
+    värde_n=factorial(n)
+    värde_k=factorial(k)
+    värde_nk=factorial(n-k)
+    return värde_n/(värde_k*värde_nk)
+
+#REKURSION
+def factorial(n):  #funkar
+    if n==1 or n==0:
+        return 1
+    else:
+        return n * factorial(n-1)
+    
+def factorial2(n): #Funkar ej men är rekursivt
+    resultat = 1
+    for i in range(n):
+        resultat *= n-i
+    return resultat
+    
+def factorial3(n):   #Funkar
+    return math.factorial(n) 
+
+
+
+print("{:.0f}".format(choose(1000,800))) #För att formatera det från t.ex 6.6171555606593036e+215
+print(choose(1000,800))
+
+
+
+
+
+#Rekursivt skriv ut exempel och hitta sätt att förenkla det på 
+#Symetri i biminolsatsen
+#Chooose i coose och itne använda factorial för är ligger problemet
